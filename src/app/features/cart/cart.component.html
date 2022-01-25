@@ -4,3 +4,9 @@
   <button (click)="removeItem(idToRemove.value)">Remove Item</button>
   <button (click)="ClearCart()">Clear Cart</button>
 </div>
+
+<div class="cart-item" *ngIf="cartItems$">
+  <div *ngFor="let cartItem of cartItems$ | async">
+    {{cartItem.item.name}}
+  </div>
+</div>
